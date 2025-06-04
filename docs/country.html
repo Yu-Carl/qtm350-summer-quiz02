@@ -160,9 +160,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#scatterplot-of-gdp-per-capita-by-year" id="toc-scatterplot-of-gdp-per-capita-by-year" class="nav-link active" data-scroll-target="#scatterplot-of-gdp-per-capita-by-year">Scatterplot of GDP per Capita by Year</a></li>
-  <li><a href="#scatterplot-of-population-by-year" id="toc-scatterplot-of-population-by-year" class="nav-link" data-scroll-target="#scatterplot-of-population-by-year">Scatterplot of Population by Year</a></li>
-  <li><a href="#scatterplot-of-life-expectancy-by-year" id="toc-scatterplot-of-life-expectancy-by-year" class="nav-link" data-scroll-target="#scatterplot-of-life-expectancy-by-year">Scatterplot of Life Expectancy by Year</a></li>
+  <li><a href="#canadian-gdp-per-capita-by-year" id="toc-canadian-gdp-per-capita-by-year" class="nav-link active" data-scroll-target="#canadian-gdp-per-capita-by-year">Canadian GDP per Capita by Year</a></li>
+  <li><a href="#canadian-population-by-year" id="toc-canadian-population-by-year" class="nav-link" data-scroll-target="#canadian-population-by-year">Canadian Population by Year</a></li>
+  <li><a href="#canadian-life-expectancy-by-year" id="toc-canadian-life-expectancy-by-year" class="nav-link" data-scroll-target="#canadian-life-expectancy-by-year">Canadian Life Expectancy by Year</a></li>
   </ul>
 </nav>
     </div>
@@ -194,8 +194,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>canada <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>country<span class="sc">==</span><span class="st">"Canada"</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="scatterplot-of-gdp-per-capita-by-year" class="level2">
-<h2 class="anchored" data-anchor-id="scatterplot-of-gdp-per-capita-by-year">Scatterplot of GDP per Capita by Year</h2>
+<section id="canadian-gdp-per-capita-by-year" class="level2">
+<h2 class="anchored" data-anchor-id="canadian-gdp-per-capita-by-year">Canadian GDP per Capita by Year</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>canada)<span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>gdp_per_capita), <span class="at">fill =</span> <span class="st">"green"</span>)<span class="sc">+</span></span>
@@ -209,8 +209,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="scatterplot-of-population-by-year" class="level2">
-<h2 class="anchored" data-anchor-id="scatterplot-of-population-by-year">Scatterplot of Population by Year</h2>
+<section id="canadian-population-by-year" class="level2">
+<h2 class="anchored" data-anchor-id="canadian-population-by-year">Canadian Population by Year</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>canada)<span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>population_millions), <span class="at">fill =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
@@ -224,8 +224,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="scatterplot-of-life-expectancy-by-year" class="level2">
-<h2 class="anchored" data-anchor-id="scatterplot-of-life-expectancy-by-year">Scatterplot of Life Expectancy by Year</h2>
+<section id="canadian-life-expectancy-by-year" class="level2">
+<h2 class="anchored" data-anchor-id="canadian-life-expectancy-by-year">Canadian Life Expectancy by Year</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>canada)<span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>life_expectancy), <span class="at">fill =</span> <span class="st">"blue"</span>)<span class="sc">+</span></span>

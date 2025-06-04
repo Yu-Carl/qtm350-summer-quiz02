@@ -10,21 +10,21 @@ pacman::p_load(tidyverse)
 canada <- gapminder[gapminder$country=="Canada",]
 ```
 
-## Scatterplot of GDP per Capita by Year
+## Canadian GDP per Capita by Year
 ```{r}
 ggplot(data=canada)+
 geom_col(mapping = aes(x=year, y=gdp_per_capita), fill = "green")+
 labs(title = "Canadian GDP per Capita from 1952-2007", x = "Year", y="GDP per Capita")
 ```
 
-## Scatterplot of Population by Year
+## Canadian Population by Year
 ```{r}
 ggplot(data=canada)+
 geom_col(mapping = aes(x=year, y=population_millions), fill = "red")+
 labs(title = "Canadian Population from 1952-2007", x = "Year", y="Population (millions)")
 ```
 
-## Scatterplot of Life Expectancy by Year
+## Canadian Life Expectancy by Year
 ```{r}
 ggplot(data=canada)+
 geom_col(mapping = aes(x=year, y=life_expectancy), fill = "blue")+
