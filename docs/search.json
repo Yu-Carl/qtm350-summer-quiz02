@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This page will explore the relationship between life expectancy and population for all countries in all years in the Gapminder dataset.\ngapminder &lt;- read.csv(\"./gapminder.csv\")\npacman::p_load(tidyverse)"
+  },
+  {
+    "objectID": "life-population.html#scatterplot-of-life-expectancy-and-population",
+    "href": "life-population.html#scatterplot-of-life-expectancy-and-population",
+    "title": "Life Expectancy and Population",
+    "section": "Scatterplot of Life Expectancy and Population",
+    "text": "Scatterplot of Life Expectancy and Population\n\nggplot(data=gapminder, mapping = aes(x=life_expectancy, y=population_millions))+\ngeom_point(alpha = 0.4)+\nlabs(title = \"Life Expectancy vs. Population\", x = \"Life Expectancy (years)\", y=\"Population (millions)\")\n\n\n\n\n\n\n\n\nUpon looking at this plot of life expectancy and population, we see that countries with higher life expectancies also seem to also have a higher population on average. However, this relationship isn’t as pronounced compared to life expectancy and GDP, as there are many countries with low GDPs that also have a wide range of life expectancy at the lower y-values."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "qtm350-summer-quiz02",
+    "section": "",
+    "text": "The Gapminder dataset has data from 1952-2007 for 142 countries on life expectancy, GDP per capita, and population.\nThis website examines the following 3 relationships:\n\nLife expectancy and GDP per capita\nLife expectancy and population\nChanges in life expectancy, GDP per capita, and population for the country of Canada over time."
+  },
+  {
+    "objectID": "index.html#analyzing-the-gapminder-dataset",
+    "href": "index.html#analyzing-the-gapminder-dataset",
+    "title": "qtm350-summer-quiz02",
+    "section": "",
+    "text": "The Gapminder dataset has data from 1952-2007 for 142 countries on life expectancy, GDP per capita, and population.\nThis website examines the following 3 relationships:\n\nLife expectancy and GDP per capita\nLife expectancy and population\nChanges in life expectancy, GDP per capita, and population for the country of Canada over time."
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This page will explore all 3 metrics of life expectancy, population, and GDP per capita for Canada from 1952-2007.\ngapminder &lt;- read.csv(\"./gapminder.csv\")\npacman::p_load(tidyverse)\ncanada &lt;- gapminder[gapminder$country==\"Canada\",]"
+  },
+  {
+    "objectID": "country.html#canadian-gdp-per-capita-by-year",
+    "href": "country.html#canadian-gdp-per-capita-by-year",
+    "title": "Country Analysis",
+    "section": "Canadian GDP per Capita by Year",
+    "text": "Canadian GDP per Capita by Year\n\nggplot(data=canada)+\ngeom_col(mapping = aes(x=year, y=gdp_per_capita), fill = \"green\")+\nlabs(title = \"Canadian GDP per Capita from 1952-2007\", x = \"Year\", y=\"GDP per Capita\")"
+  },
+  {
+    "objectID": "country.html#canadian-population-by-year",
+    "href": "country.html#canadian-population-by-year",
+    "title": "Country Analysis",
+    "section": "Canadian Population by Year",
+    "text": "Canadian Population by Year\n\nggplot(data=canada)+\ngeom_col(mapping = aes(x=year, y=population_millions), fill = \"red\")+\nlabs(title = \"Canadian Population from 1952-2007\", x = \"Year\", y=\"Population (millions)\")"
+  },
+  {
+    "objectID": "country.html#canadian-life-expectancy-by-year",
+    "href": "country.html#canadian-life-expectancy-by-year",
+    "title": "Country Analysis",
+    "section": "Canadian Life Expectancy by Year",
+    "text": "Canadian Life Expectancy by Year\n\nggplot(data=canada)+\ngeom_col(mapping = aes(x=year, y=life_expectancy), fill = \"blue\")+\nlabs(title = \"Canadian Life Expectancy from 1952-2007\", x = \"Year\", y=\"Life Expectancy (years)\")\n\n\n\n\n\n\n\n\nWe see that all 3 metrics, GDP per capita, population, and life expectancy, steadily increase throughout 1952-2007. GDP per capita has over tripled and population has over doubled, while life expectancy seems to have increased around 20%."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This page will explore the relationship between life expectancy and GDP per capita for all countries in all years in the Gapminder dataset.\ngapminder &lt;- read.csv(\"./gapminder.csv\")\npacman::p_load(tidyverse)"
+  },
+  {
+    "objectID": "life-gdp.html#scatterplot-of-life-expectancy-and-gdp-per-capita",
+    "href": "life-gdp.html#scatterplot-of-life-expectancy-and-gdp-per-capita",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "Scatterplot of Life Expectancy and GDP per Capita",
+    "text": "Scatterplot of Life Expectancy and GDP per Capita\n\nggplot(data=gapminder, mapping = aes(x=life_expectancy, y=gdp_per_capita))+\ngeom_point(alpha = 0.4)+\nlabs(title = \"Life Expectancy vs. GDP per Capita\", x = \"Life Expectancy (years)\", y=\"GDP per Capita\")\n\n\n\n\n\n\n\n\nUpon looking at this plot of life expectancy and GDP per capita, we see that countries with higher life expectancies also tend to have a higher GDP per capita on average."
+  }
+]
