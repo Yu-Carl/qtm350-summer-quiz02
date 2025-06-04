@@ -1,0 +1,19 @@
+---
+title: "Life Expectancy and GDP per Capita"
+---
+
+This page will explore the relationship between life expectancy and GDP per capita for all countries in all years in the Gapminder dataset.
+
+```{r}
+gapminder <- read.csv("./gapminder.csv")
+pacman::p_load(tidyverse)
+```
+
+## Scatterplot of Life Expectancy and GDP per Capita
+```{r}
+ggplot(data=gapminder, mapping = aes(x=life_expectancy, y=gdp_per_capita))+
+geom_point(alpha = 0.4)+
+labs(title = "Life Expectancy vs. GDP per Capita", x = "Life Expectancy (years)", y="GDP per Capita")
+```
+
+Upon looking at this plot of life expectancy and GDP per capita, we see that countries with higher life expectancies also tend to have a higher GDP per capita on average.

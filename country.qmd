@@ -1,0 +1,34 @@
+---
+title: "Country Analysis"
+---
+
+This page will explore all 3 metrics of life expectancy, population, and GDP per capita for Canada from 1952-2007.
+
+```{r}
+gapminder <- read.csv("./gapminder.csv")
+pacman::p_load(tidyverse)
+canada <- gapminder[gapminder$country=="Canada",]
+```
+
+## Scatterplot of GDP per Capita by Year
+```{r}
+ggplot(data=canada)+
+geom_col(mapping = aes(x=year, y=gdp_per_capita), fill = "green")+
+labs(title = "Canadian GDP per Capita from 1952-2007", x = "Year", y="GDP per Capita")
+```
+
+## Scatterplot of Population by Year
+```{r}
+ggplot(data=canada)+
+geom_col(mapping = aes(x=year, y=population_millions), fill = "red")+
+labs(title = "Canadian Population from 1952-2007", x = "Year", y="Population (millions)")
+```
+
+## Scatterplot of Life Expectancy by Year
+```{r}
+ggplot(data=canada)+
+geom_col(mapping = aes(x=year, y=life_expectancy), fill = "blue")+
+labs(title = "Canadian Life Expectancy from 1952-2007", x = "Year", y="Life Expectancy (years)")
+```
+
+We see that all 3 metrics, GDP per capita, population, and life expectancy, steadily increase throughout 1952-2007. GDP per capita has over tripled and population has over doubled, while life expectancy seems to have increased around 20%.

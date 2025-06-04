@@ -1,0 +1,19 @@
+---
+title: "Life Expectancy and Population"
+---
+
+This page will explore the relationship between life expectancy and population for all countries in all years in the Gapminder dataset.
+
+```{r}
+gapminder <- read.csv("./gapminder.csv")
+pacman::p_load(tidyverse)
+```
+
+## Scatterplot of Life Expectancy and Population
+```{r}
+ggplot(data=gapminder, mapping = aes(x=life_expectancy, y=population_millions))+
+geom_point(alpha = 0.4)+
+labs(title = "Life Expectancy vs. Population", x = "Life Expectancy (years)", y="Population (millions)")
+```
+
+Upon looking at this plot of life expectancy and population, we see that countries with higher life expectancies also seem to also have a higher population on average. However, this relationship isn't as pronounced compared to life expectancy and GDP, as there are many countries with low GDPs that also have a wide range of life expectancy at the lower y-values.
